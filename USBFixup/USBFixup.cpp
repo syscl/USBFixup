@@ -27,7 +27,6 @@ bool USBFx::init()
        [](void* user, KernelPatcher& patcher, size_t index, mach_vm_address_t address, size_t size) {
            USBFx* patch = static_cast<USBFx*>(user);
            patch->processKext(patcher, index, address, size);
-           
        }, this);
     
     if (error != LiluAPI::Error::NoError)
